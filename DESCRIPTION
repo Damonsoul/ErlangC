@@ -1,6 +1,6 @@
 Package: ErlangC
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Solve Erlang-C Model
 Version: 0.1.0
 Authors@R: person(family = "Damonsoul",
                      role = c("aut", "cre"),
