@@ -1,0 +1,60 @@
+---
+output: github_document
+---
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# ErlangC
+
+
+
+This package provides a set of functions to solve Erlang-C model.
+
+## Installation
+
+You can install the development version of ErlangC from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("pak")
+pak::pak("Damonsoul/ErlangC")
+```
+
+## Example
+
+the example below shows how to calculate Erlang-C metrics.
+
+```{r}
+library(ErlangC)
+erlang_c(100, lubridate::duration(30, "minutes"), lubridate::duration(180, "seconds"), lubridate::duration(20, "seconds"), 14)
+```
+
+The example below shows how to calculate the number of agents required for an Erlang-C model.
+
+```{r example}
+calculate_agents(
+  call_count = 100,
+  call_period = lubridate::duration(30, "minutes"),
+  avg_handle_time = lubridate::duration(180, "seconds"),
+  target_anser_time = lubridate::duration(20, "seconds"),
+  require_service_level = 0.8,
+  max_occupancy = 0.85,
+  shrinkage = 0.3,
+  max_agents = 200
+)
+```
+
+the example below shows how to use the Shiny app for Erlang-C metrics.
+
+```{r,eval = FALSE}
+erlang_c_app()
+```
+
+![](./man/figures/README-ShinyApp.jpg)
